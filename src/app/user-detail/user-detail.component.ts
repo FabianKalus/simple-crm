@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 import { doc, onSnapshot } from '@firebase/firestore';
+import { DialogEditAddressComponent } from '../dialog-edit-address/dialog-edit-address.component';
+import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.component';
 
 @Component({
   selector: 'app-user-detail',
@@ -28,4 +30,15 @@ export class UserDetailComponent implements OnInit {
 
     });
   }
+
+  editMenu(){
+    const dialog = this.dialog.open(DialogEditAddressComponent);
+    dialog.componentInstance.user = new User(this.activeUser.toJSON());
+  }
+  
+  editUserDetail(){
+    const dialog = this.dialog.open(DialogEditUserComponent);
+    dialog.componentInstance.user = new User(this.activeUser.toJSON());
+  }
+
 }
