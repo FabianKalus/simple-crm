@@ -27,6 +27,7 @@ import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 
 
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     DashboardComponent,
     UserComponent,
-    DialogAddUserComponent
+    DialogAddUserComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
