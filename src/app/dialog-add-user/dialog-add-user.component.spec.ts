@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Firestore } from '@angular/fire/firestore';
 
 import { DialogAddUserComponent } from './dialog-add-user.component';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 describe('DialogAddUserComponent', () => {
   let component: DialogAddUserComponent;
@@ -8,7 +10,15 @@ describe('DialogAddUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogAddUserComponent ]
+      imports: [
+        MatDialogModule, 
+     ],
+      declarations: [ DialogAddUserComponent ],
+      providers: [{ provide: Firestore, useValue: {} },
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },]
     })
     .compileComponents();
 
@@ -17,7 +27,4 @@ describe('DialogAddUserComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/models/user.class';
+
 import { MatDialogRef } from '@angular/material/dialog';
 import { doc, Firestore, setDoc } from '@angular/fire/firestore';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-edit-address',

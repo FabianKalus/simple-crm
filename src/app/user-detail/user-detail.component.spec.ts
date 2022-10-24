@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserDetailComponent } from './user-detail.component';
+import { RouterModule } from '@angular/router';
+import { Firestore } from '@angular/fire/firestore';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 describe('UserDetailComponent', () => {
   let component: UserDetailComponent;
@@ -8,7 +11,19 @@ describe('UserDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserDetailComponent ]
+      imports: [RouterModule.forRoot([]), MatDialogModule],
+      declarations: [ UserDetailComponent ],
+      providers: [
+        {
+          provide: Firestore,
+          useValue: {}
+        },
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+        
+     ],
     })
     .compileComponents();
 
