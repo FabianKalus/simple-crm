@@ -11,7 +11,7 @@ import { doc, Firestore, setDoc } from '@angular/fire/firestore';
 })
 export class DialogEditUserComponent implements OnInit {
 
-  user!: User;
+  user: User = new User();
   loading = false;
   birthDate!: Date;
 

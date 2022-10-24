@@ -11,7 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./dialog-edit-address.component.scss']
 })
 export class DialogEditAddressComponent implements OnInit {
-  user!: User;
+  user: User = new User();
   loading = false;
 
   constructor(public dialogRef: MatDialogRef<DialogEditAddressComponent>, private firestore: Firestore) { }

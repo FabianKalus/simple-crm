@@ -4,6 +4,8 @@ import { UserDetailComponent } from './user-detail.component';
 import { RouterModule } from '@angular/router';
 import { Firestore } from '@angular/fire/firestore';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 describe('UserDetailComponent', () => {
   let component: UserDetailComponent;
@@ -11,7 +13,8 @@ describe('UserDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterModule.forRoot([]), MatDialogModule],
+      imports: [RouterModule.forRoot([]), MatDialogModule, MatMenuModule
+    ],
       declarations: [ UserDetailComponent ],
       providers: [
         {
@@ -22,6 +25,7 @@ describe('UserDetailComponent', () => {
           provide: MatDialogRef,
           useValue: {}
         },
+    
         
      ],
     })
