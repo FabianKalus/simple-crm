@@ -21,11 +21,12 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.users$){
     const coll = collection(this.firestore, 'Users');
     this.users$ = collectionData(coll);
     this.users$.subscribe((usersFromServer:any)=>{
       this.allUsers = usersFromServer;
-    })
+    })}
   }
 
   openDialog() {

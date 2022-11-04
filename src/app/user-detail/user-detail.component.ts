@@ -23,6 +23,7 @@ export class UserDetailComponent implements OnInit {
     public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    if(this.userId){
     this.route.paramMap.subscribe(paramMap => {
       this.userId = paramMap.get('id');
     })
@@ -31,6 +32,7 @@ export class UserDetailComponent implements OnInit {
       this.activeUser = new User(doc.data());
 
     });
+  }
   }
 
   editMenu(){

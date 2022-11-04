@@ -23,5 +23,9 @@ describe('UserComponent', () => {
     fixture.detectChanges();
   });
 
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
  
 });
